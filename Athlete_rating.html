@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Athlete Ratings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: yellow;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        fieldset {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .output-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #ffffcc;
+            display: inline-block;
+        }
+
+        .output-container p {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function getRating() {
+            var countryCode = prompt("Enter the country code (K, I, U, N, or any other):");
+            var country;
+            var rating;
+
+            switch (countryCode.toUpperCase()) {
+                case 'K':
+                    country = "Kenya";
+                    rating = "Highly talented sportsmen";
+                    break;
+                case 'I':
+                    country = "India";
+                    rating = "Sporting affected by their culture";
+                    break;
+                case 'U':
+                    country = "United States";
+                    rating = "Good in short races";
+                    break;
+                case 'N':
+                    country = "Nigeria";
+                    rating = "Give a good attempt in short races";
+                    break;
+                default:
+                    country = "Other";
+                    rating = "General performance is low";
+            }
+
+            var outputContainer = document.getElementById('output-container');
+            outputContainer.innerHTML = "<div class='output-container'><p><strong>Country:</strong> " + country + "<br><strong>Rating:</strong> " + rating + "</p></div>";
+        }
+    </script>
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <legend>Athlete Rating Lookup</legend>
+        <button type="button" onclick="getRating()">Get Athlete Rating</button>
+    </fieldset>
+</form>
+
+<div id="output-container"></div>
+
+</body>
+</html>
